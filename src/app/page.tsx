@@ -2,7 +2,9 @@
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaGithub, FaItchIo, FaSpotify } from 'react-icons/fa';
+import { SiVercel } from 'react-icons/si';
+import { RiQuestionAnswerFill } from 'react-icons/ri';
 import { Typewriter } from 'react-simple-typewriter';
 
 export default function Home() {
@@ -14,9 +16,9 @@ export default function Home() {
 
         {/* Hero Section */}
         <div className="text-center animate-fade-in-down">
-          <h1 className="text-3xl sm:text-4xl font-bold mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4 tracking-tight">
             <Typewriter
-              words={['Halo, Saya Arman Fajri 👋', 'Welcome to my Portfolio!']}
+              words={['Halo, Saya Arman Fajri 👋', 'WELCOME TO MY PORTOFOLIO!']}
               loop={false}
               cursor
               cursorStyle="|"
@@ -32,13 +34,15 @@ export default function Home() {
 
         {/* About */}
         <div id="about" className="mt-20 max-w-2xl mx-auto text-center px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-4">About Me</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 tracking-tight text-gray-800 dark:text-white">
+            About Me
+          </h2>
           <img
             src="/fajri.jpg"
             alt="Foto Arman Fajri"
-            className="mx-auto w-32 sm:w-40 h-32 sm:h-40 rounded-full object-cover mb-4 shadow-lg"
+            className="mx-auto w-32 sm:w-40 h-32 sm:h-40 rounded-full object-cover mb-4 shadow-[0_8px_16px_rgba(0,0,0,0.25)] hover:scale-105 transition-transform duration-300"
           />
-          <div className="text-base sm:text-lg text-gray-700 dark:text-gray-300 border p-4 rounded-lg shadow-md bg-white dark:bg-gray-800">
+          <div className="text-base sm:text-lg text-gray-700 dark:text-gray-300 border p-6 rounded-2xl bg-white dark:bg-gray-800 transition-transform duration-300 hover:scale-[1.02] shadow-[0_15px_30px_rgba(0,0,0,0.25)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
             <Typewriter
               words={[
                 'Halo! Nama saya Arman Tri Fajri, seorang pelajar dari SMK Negeri 21 Jakarta yang mengambil jurusan RPL. Saya tinggal di Sunter Jaya, dan memiliki minat besar dalam pengembangan perangkat lunak dan teknologi web. Saya bercita-cita menjadi developer profesional.'
@@ -51,89 +55,175 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Social Media */}
-        <div id="social-media" className="mt-20 text-center animate-fade-in-down">
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-4">Social Media</h2>
-          <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-4">
-            Kamu bisa menemukan saya di beberapa platform berikut:
-          </p>
-          <div className="flex justify-center gap-10 text-2xl sm:text-3xl">
-            <a href="https://instagram.com/armn_" target="_blank" rel="noopener noreferrer" className="text-pink-500 hover:scale-110 transition">
-              <FaInstagram />
-            </a>
-            <a href="https://linkedin.com/in/username" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:scale-110 transition">
-              <FaLinkedin />
-            </a>
-            <a href="https://github.com/username" target="_blank" rel="noopener noreferrer" className="text-gray-800 dark:text-white hover:scale-110 transition">
-              <FaGithub />
-            </a>
-          </div>
-        </div>
-
-       <div id="projects" className="mt-20 text-center">
-  <h2 className="text-3xl font-semibold mb-8">Last Projects</h2>
-  <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+     {/* Social Media */}
+<div id="social-media" className="mt-20 text-center animate-fade-in-down">
+  <h2 className="text-3xl sm:text-4xl font-bold mb-6 tracking-tight text-gray-800 dark:text-white">Social Media</h2>
+  <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-4">
+    Kamu bisa menemukan saya di beberapa platform berikut:
+  </p>
+  <div className="flex flex-wrap justify-center gap-6 sm:gap-10 text-2xl sm:text-3xl">
     {[
       {
-        title: "GameStore App",
-        desc: "Aplikasi web untuk menjual dan membeli game digital berbasis Next.js dan Laravel.",
-        link: "https://github.com/username/gamestore",
-        image: "/gamestore.jpg"
+        name: "Instagram",
+        icon: <FaInstagram />,
+        href: "https://www.instagram.com/armntrifjri?utm_source=qr&igsh=dDNqbHBobnI2bnJk",
+        color: "text-pink-500",
       },
       {
-        title: "TodoList Mobile",
-        desc: "Aplikasi mobile menggunakan React Native untuk mengelola aktivitas harian.",
-        link: "https://github.com/username/todolist-mobile",
-        image: "/todolist.jpg"
+        name: "LinkedIn",
+        icon: <FaLinkedin />,
+        href: "https://www.linkedin.com/in/arman-tri-fajri-2846a7334?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        color: "text-blue-600",
       },
       {
-        title: "Portfolio Website",
-        desc: "Website portofolio pribadi ini dibuat menggunakan Next.js dan Tailwind CSS.",
-        link: "https://github.com/username/portfolio",
-        image: "/portfolio.jpg"
-      }
-    ].map((project, index) => (
-      <div
-        key={index}
-        className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 text-left transition-transform duration-300 hover:scale-105"
+        name: "GitHub",
+        icon: <FaGithub />,
+        href: "https://github.com/FAJRI2378",
+        color: "text-gray-800 dark:text-white",
+      },
+      {
+        name: "Itch.io",
+        icon: <FaItchIo />,
+        href: "https://itch.io/profile/fajri2378",
+        color: "text-red-600",
+      },
+      {
+        name: "Vercel",
+        icon: <SiVercel />,
+        href: "https://vercel.com/fajri2378s-projects",
+        color: "text-black dark:text-white",
+      },
+      {
+        name: "NGL",
+        icon: <RiQuestionAnswerFill />,
+        href: "https://ngl.link/armntrifjrii",
+        color: "text-purple-500",
+      },
+      {
+        name: "Spotify",
+        icon: <FaSpotify />,
+        href: "https://open.spotify.com/playlist/6JLfBvd6G8GVJw1LYENT8R?si=T3cpEZ2vT3unGqDuda7abw",
+        color: "text-green-500",
+      },
+    ].map((item, idx) => (
+      <a
+        key={idx}
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex flex-col items-center gap-1 hover:scale-110 transition-transform"
       >
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-40 object-cover rounded-md mb-4"
-        />
-        <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-        <p className="text-gray-600 dark:text-gray-300 mb-4">{project.desc}</p>
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-500 hover:underline"
-        >
-          Lihat Proyek →
-        </a>
-      </div>
+        <div className={`${item.color} text-3xl`}>{item.icon}</div>
+        <p className="text-sm text-gray-700 dark:text-gray-300">{item.name}</p>
+      </a>
     ))}
   </div>
 </div>
 
 
-        {/* Sertifikat */}
-        <div id="sertifikat" className="mt-20 text-center">
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-8">Sertifikat</h2>
-          <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4">
+        {/* Projects */}
+        <div id="projects" className="mt-20 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 tracking-tight text-gray-800 dark:text-white">Last Projects</h2>
+          <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4">
             {[
-              { src: "/sertifikat1.jpg", desc: "Sertifikat Pelatihan Web Development dari Dicoding" },
-              { src: "/sertifikat2.jpg", desc: "Sertifikat Frontend Next.js dari Program X" },
-              { src: "/sertifikat3.jpg", desc: "Sertifikat Desain UI/UX Dasar dari CodePolitan" }
-            ].map((sertif, idx) => (
-              <div key={idx} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 transition-transform duration-300 hover:scale-105">
-                <img src={sertif.src} alt={`Sertifikat ${idx + 1}`} className="w-full h-56 object-cover rounded-md mb-4" />
-                <p className="text-gray-700 dark:text-gray-300">{sertif.desc}</p>
-              </div>
-            ))}
+              {
+                title: "GameStore App",
+                desc: "Aplikasi web untuk menjual dan membeli game digital berbasis Laravel.",
+                link: "https://github.com/FAJRI2378/gamestore",
+                image: "/gamestore.png"
+              },
+              {
+                title: "Rasania (Mobile)",
+                desc: "Aplikasi mobile menggunakan React Native untuk melihat resep resep makanan.",
+                link: "https://github.com/FAJRI2378/Resepku",
+                image: "/rasaniaa.png"
+              },
+              {
+                title: "Game Pairs",
+                desc: "Menggunakan GDevelop untuk membuat game Pairs",
+                link: "https://fajri2378.itch.io/pairs",
+                image: "/pairs.png"
+              },
+              {
+                title: "Sokoban",
+                desc: "Menggunakan GDevelop untuk membuat game Sokoban (tidak bisa dimainkan di hp)",
+                link: "https://fajri2378.itch.io/sokoban",
+                image: "/sokoban.png"
+              },
+              {
+                title: "Platform",
+                desc: "Menggunakan GDevelop untuk membuat game Platform (tidak bisa dimainkan di hp)",
+                link: "https://fajri2378.itch.io/game-platform",
+                image: "/platform.png"
+              }
+            ].map((project, index) => {
+              const isRasania = project.title.includes('Rasania');
+              return (
+                <div
+                  key={index}
+                  className="bg-white dark:bg-gray-800 rounded-2xl p-6 text-left transition-transform duration-300 hover:scale-[1.03] shadow-[0_15px_30px_rgba(0,0,0,0.25)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
+                >
+                  {isRasania ? (
+                    <div className="flex justify-center">
+                      <div className="bg-black rounded-[2rem] p-2 w-[250px] h-[520px] shadow-[0_8px_16px_rgba(0,0,0,0.3)]">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-contain rounded-[1.5rem]"
+                        />
+                      </div>
+                    </div>
+                  ) : (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-40 object-cover rounded-xl mb-4 transition-transform duration-300 hover:scale-105 shadow-[0_8px_16px_rgba(0,0,0,0.2)]"
+                    />
+                  )}
+                  <h3 className="text-xl font-semibold mt-4 mb-2">{project.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">{project.desc}</p>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline"
+                  >
+                    Lihat Proyek →
+                  </a>
+                </div>
+              );
+            })}
           </div>
         </div>
+
+        {/* Photography */}
+<div id="photography" className="mt-20 text-center">
+  <h2 className="text-3xl sm:text-4xl font-bold mb-6 tracking-tight text-gray-800 dark:text-white">Photography</h2>
+  <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-8 px-4">
+    Selain membuat web, saya juga memiliki hobi fotografi. Berikut adalah beberapa hasil foto yang saya ambil:
+  </p>
+  <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4">
+    {[
+      "/p1.jpg",
+      "/p2.jpg",
+      "/p3.jpg"
+   ].map((src, idx) => (
+  <div
+    key={idx}
+    className="rounded-2xl overflow-hidden shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:scale-[1.02] transition-transform duration-300"
+  >
+    <img
+      src={src}
+      alt={`Foto hasil karya ${idx + 1}`}
+      className={`w-full object-cover ${
+        idx === 1 ? 'h-120' : 'h-64'
+      }`}
+    />
+  </div>
+))}
+  </div>
+</div>
+
       </main>
 
       <Footer />
