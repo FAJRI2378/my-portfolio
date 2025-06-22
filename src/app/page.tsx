@@ -14,7 +14,8 @@ export default function Home() {
       <ParticlesBackground />
       <Navbar />
 
-      <main className="min-h-screen px-4 sm:px-6 md:px-8 py-8 bg-gradient-to-br from-gray-50 via-white to-blue-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-black dark:text-white">
+      <main className="relative z-10 min-h-screen px-4 sm:px-6 md:px-8 py-8 bg-gradient-to-br from-gray-50 via-white to-blue-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-black dark:text-white">
+
 
         {/* Hero Section */}
         <div className="text-center animate-fade-in-down shadow-[0_4px_20px_rgba(0,0,0,0.15)] rounded-xl p-6 bg-white/70 dark:bg-gray-800/50 max-w-2xl mx-auto">
@@ -26,7 +27,7 @@ export default function Home() {
   }}
 >
   <Typewriter
-    words={['Halo, Saya Arman Fajri 👋', 'WELCOME TO MY PORTOFOLIO!']}
+    words={['Halo, Saya Arman Tri Fajri 👋', 'WELCOME TO MY PORTOFOLIO!']}
     loop={false}
     cursor
     cursorStyle="|"
