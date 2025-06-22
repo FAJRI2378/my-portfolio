@@ -71,8 +71,8 @@ export default function Home() {
               { name: 'GitHub', icon: <FaGithub />, href: 'https://github.com/FAJRI2378', color: 'text-white' },
               { name: 'Itch.io', icon: <FaItchIo />, href: 'https://itch.io/profile/fajri2378', color: 'text-red-600' },
               { name: 'Vercel', icon: <SiVercel />, href: 'https://vercel.com/fajri2378s-projects', color: 'text-white' },
-              { name: 'NGL', icon: <RiQuestionAnswerFill />, href: 'https://ngl.link/armntrifjrii', color: 'text-purple-500' },
-              { name: 'Spotify', icon: <FaSpotify />, href: 'https://open.spotify.com/playlist/6JLfBvd6G8GVJw1LYENT8R', color: 'text-green-500' },
+              { name: 'Kirim Pesan (NGL)', icon: <RiQuestionAnswerFill />, href: 'https://ngl.link/armntrifjrii', color: 'text-purple-500' },
+              { name: 'Playlist 10/10', icon: <FaSpotify />, href: 'https://open.spotify.com/playlist/6JLfBvd6G8GVJw1LYENT8R', color: 'text-green-500' },
             ].map((item, idx) => (
               <a
                 key={idx}

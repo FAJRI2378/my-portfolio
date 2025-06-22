@@ -24,60 +24,45 @@ const ParticlesBackground = () => {
       }}
       options={{
         fullScreen: false,
-        background: { color: { value: '#000000' } },
+        background: {
+          color: { value: '#000000' },
+        },
         fpsLimit: 60,
         particles: {
           number: {
-            value: 90,
-            density: { enable: true, area: 900 },
+            value: 110,
+            density: {
+              enable: true,
+              area: 800,
+            },
           },
           color: {
-            value: ['#00ffff', '#39ff14', '#ff00ff', '#ffffff'],
+            value: ['#00ffff', '#00ff88', '#ff00cc', '#ffffff'],
           },
           shape: {
-            type: ['circle', 'triangle', 'edge', 'star'],
+            type: ['circle', 'triangle', 'star'],
           },
           opacity: {
-            value: 0.6,
-            random: true,
-            anim: {
-              enable: true,
-              speed: 1.5,
-              opacity_min: 0.2,
-              sync: false,
-            },
+            value: 1,
+            random: false,
           },
           size: {
-            value: 3,
-            random: true,
-            anim: {
-              enable: true,
-              speed: 4,
-              size_min: 0.5,
-              sync: false,
-            },
+            value: 3.5,
+            random: { enable: true, minimumValue: 2 },
           },
           links: {
             enable: true,
-            distance: 130,
+            distance: 140,
             color: '#00ffff',
-            opacity: 0.3,
-            width: 1,
-            shadow: {
-              enable: true,
-              color: '#00ffff',
-              blur: 3,
-            },
+            opacity: 0.8,
+            width: 1.5,
           },
           move: {
             enable: true,
-            speed: 2,
+            speed: 2.2,
             direction: 'none',
-            outModes: { default: 'out' },
-            attract: {
-              enable: false,
-              rotateX: 600,
-              rotateY: 1200,
+            outModes: {
+              default: 'out',
             },
           },
         },
@@ -94,13 +79,13 @@ const ParticlesBackground = () => {
           },
           modes: {
             grab: {
-              distance: 140,
+              distance: 160,
               links: {
-                opacity: 0.6,
+                opacity: 1,
               },
             },
             push: {
-              quantity: 6,
+              quantity: 5,
             },
           },
         },
