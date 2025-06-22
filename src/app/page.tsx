@@ -14,10 +14,10 @@ export default function Home() {
       <ParticlesBackground />
       <Navbar />
 
-      <main className="relative z-10 min-h-screen px-4 sm:px-6 md:px-8 py-8 bg-black/90 text-gray-200 font-sans">
+     <main className="relative z-10 min-h-screen px-4 sm:px-6 md:px-8 pt-32 pb-8 bg-black/90 text-gray-200 font-sans">
 
         {/* Hero Section */}
-        <div className="text-center animate-fade-in-down shadow-xl rounded-xl p-6 bg-slate-800/80 max-w-2xl mx-auto">
+        <div className="text-center animate-fade-in-down shadow-xl rounded-xl p-10 bg-slate-800/80 max-w-2xl mx-auto">
           <h1
             className="text-3xl sm:text-4xl font-bold mb-4 tracking-tight"
             style={{ WebkitTextStroke: '1px white', color: 'transparent' }}
