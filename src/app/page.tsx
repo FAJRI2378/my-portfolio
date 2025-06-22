@@ -90,8 +90,83 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Projects */}
+        <div id="projects" className="mt-20 text-center shadow-[0_10px_30px_rgba(0,0,0,0.25)] bg-transparent dark:bg-transparent dark:text-white p-6 rounded-xl max-w-7xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 tracking-tight text-white">Last Projects</h2>
+          <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4">
+            {[
+              {
+                title: "GameStore App",
+                desc: "Aplikasi web untuk menjual dan membeli game digital berbasis Laravel.",
+                link: "https://github.com/FAJRI2378/gamestore",
+                image: "/gamestore.png"
+              },
+              {
+                title: "Rasania (Mobile)",
+                desc: "Aplikasi mobile menggunakan React Native untuk melihat resep resep makanan.",
+                link: "https://github.com/FAJRI2378/Resepku",
+                image: "/rasaniaa.png"
+              },
+              {
+                title: "Game Pairs",
+                desc: "Menggunakan GDevelop untuk membuat game Pairs",
+                link: "https://fajri2378.itch.io/pairs",
+                image: "/pairs.png"
+              },
+              {
+                title: "Sokoban",
+                desc: "Menggunakan GDevelop untuk membuat game Sokoban (tidak bisa dimainkan di hp)",
+                link: "https://fajri2378.itch.io/sokoban",
+                image: "/sokoban.png"
+              },
+              {
+                title: "Platform",
+                desc: "Menggunakan GDevelop untuk membuat game Platform (tidak bisa dimainkan di hp)",
+                link: "https://fajri2378.itch.io/game-platform",
+                image: "/platform.png"
+              }
+            ].map((project, index) => {
+              const isRasania = project.title.includes('Rasania');
+              return (
+                <div
+                  key={index}
+                  className="bg-white dark:bg-gray-800 rounded-2xl p-6 text-left transition-transform duration-300 hover:scale-[1.03] shadow-[0_15px_30px_rgba(0,0,0,0.25)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
+                >
+                  {isRasania ? (
+                    <div className="flex justify-center">
+                      <div className="bg-black rounded-[2rem] p-2 w-[250px] h-[520px] shadow-[0_8px_16px_rgba(0,0,0,0.3)]">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-contain rounded-[1.5rem]"
+                        />
+                      </div>
+                    </div>
+                  ) : (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-40 object-cover rounded-xl mb-4 transition-transform duration-300 hover:scale-105 shadow-[0_8px_16px_rgba(0,0,0,0.2)]"
+                    />
+                  )}
+                  <h3 className="text-xl font-semibold mt-4 mb-2">{project.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">{project.desc}</p>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline"
+                  >
+                    Lihat Proyek →
+                  </a>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
         {/* Photography */}
-        <div id="photography" className="mt-20 text-center shadow-xl p-6 bg-transparent rounded-xl max-w-6xl mx-auto">
+        <div id="photography" className="mt-20 text-center shadow-[0_8px_20px_rgba(0,0,0,0.2)] p-6 bg-transparent dark:bg-transparent rounded-xl max-w-6xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 tracking-tight text-white">Photography</h2>
           <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto mb-8 px-4">
             Selain membuat web, saya juga memiliki hobi fotografi. Berikut adalah beberapa hasil foto yang saya ambil:
@@ -100,7 +175,7 @@ export default function Home() {
             {["/p1.jpg", "/p2.jpg", "/p3.jpg"].map((src, idx) => (
               <div
                 key={idx}
-                className="rounded-2xl overflow-hidden shadow-xl hover:scale-[1.02] transition-transform duration-300"
+                className="rounded-2xl overflow-hidden shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:scale-[1.02] transition-transform duration-300"
               >
                 <img
                   src={src}
