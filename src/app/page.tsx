@@ -14,7 +14,7 @@ export default function Home() {
       <ParticlesBackground />
       <Navbar />
 
-      <main className="relative z-10 min-h-screen px-4 sm:px-6 md:px-8 py-8 bg-gradient-to-br from-gray-50 via-white to-blue-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-black dark:text-white">
+<main className="relative z-10 min-h-screen px-4 sm:px-6 md:px-8 py-8 bg-transparent text-black dark:text-white">
 
 
         {/* Hero Section */}
