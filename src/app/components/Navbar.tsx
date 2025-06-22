@@ -3,7 +3,8 @@ import Link from 'next/link';
 
 export default function Navbar() {
   return (
-    <nav className="flex flex-wrap justify-center sm:justify-between items-center gap-4 sm:gap-6 p-4 sm:px-8 bg-white/70 dark:bg-gray-900/60 backdrop-blur-md border-b border-white/10 shadow-md fixed top-0 left-0 w-full z-50">
+    <nav className="flex flex-wrap justify-center sm:justify-between items-center gap-4 sm:gap-6 p-4 sm:px-8
+  bg-slate-800/80 backdrop-blur-md text-white shadow-md border-b border-white/10 fixed top-0 w-full z-50">
       <h1 className="text-xl font-bold w-full text-center sm:w-auto sm:text-left text-black dark:text-white">
         Portofolio
       </h1>
