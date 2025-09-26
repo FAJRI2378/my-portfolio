@@ -1,5 +1,4 @@
 'use client';
-import Link from 'next/link';
 
 export default function Navbar() {
   return (
@@ -11,11 +10,7 @@ export default function Navbar() {
       </h1>
 
       <ul className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm sm:text-base text-white">
-        <li>
-          <Link href="/" className="hover:text-cyan-400 transition-colors duration-200">
-            Beranda
-          </Link>
-        </li>
+      
         <li>
           <a href="#about" className="hover:text-cyan-400 transition-colors duration-200">
             About
@@ -29,6 +24,16 @@ export default function Navbar() {
         <li>
           <a href="#projects" className="hover:text-cyan-400 transition-colors duration-200">
             Projects
+          </a>
+        </li>
+        <li>
+          <a href="#skills" className="hover:text-cyan-400 transition-colors duration-200">
+            Skills
+          </a>
+        </li>
+        <li>
+          <a href="#certificates" className="hover:text-cyan-400 transition-colors duration-200">
+            Sertifikat
           </a>
         </li>
       </ul>
