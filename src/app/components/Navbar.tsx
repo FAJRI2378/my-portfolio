@@ -17,8 +17,8 @@ export default function Navbar() {
           </a>
         </li>
         <li>
-          <a href="#social-media" className="hover:text-cyan-400 transition-colors duration-200">
-            Social Media
+          <a href="#education" className="hover:text-cyan-400 transition-colors duration-200">
+            Education
           </a>
         </li>
         <li>
@@ -27,13 +27,13 @@ export default function Navbar() {
           </a>
         </li>
         <li>
-          <a href="#skills" className="hover:text-cyan-400 transition-colors duration-200">
-            Skills
+          <a href="#certificates" className="hover:text-cyan-400 transition-colors duration-200">
+            Certificates
           </a>
         </li>
         <li>
-          <a href="#certificates" className="hover:text-cyan-400 transition-colors duration-200">
-            Sertifikat
+          <a href="#social-media" className="hover:text-cyan-400 transition-colors duration-200">
+           Contact
           </a>
         </li>
       </ul>

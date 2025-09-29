@@ -78,47 +78,51 @@ export default function Home() {
           </ul>
         </div>
 
-        {/* Projects */}
-        <div id="projects" className="mt-20 text-center p-6 max-w-7xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-8 tracking-tight text-gray-100">Projects</h2>
-          <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4">
-            {[
-              { title: 'GameStore App', desc: 'Aplikasi web jual-beli game berbasis Laravel.', link: 'https://github.com/FAJRI2378/gamestore', image: '/gamestore.png' },
-              { title: 'Rasania (Mobile)', desc: 'Aplikasi resep makanan dengan React Native.', link: 'https://github.com/FAJRI2378/Resepku', image: '/rasaniaa.png' },
-              { title: 'Game Pairs', desc: 'Game sederhana dengan GDevelop.', link: 'https://fajri2378.itch.io/pairs', image: '/pairs.png' },
-              { title: 'Sokoban', desc: 'Game Sokoban klasik dengan GDevelop.', link: 'https://fajri2378.itch.io/sokoban', image: '/sokoban.png' },
-              { title: 'Platformer', desc: 'Game Platformer dengan GDevelop.', link: 'https://fajri2378.itch.io/game-platform', image: '/platform.png' },
-            ].map((project, index) => (
-              <div
-                key={index}
-                className="bg-slate-800/70 border border-white/10 text-gray-200 rounded-2xl p-6 text-left transition-transform duration-300 hover:scale-[1.03] shadow-lg"
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-40 object-cover rounded-xl mb-4 transition-transform duration-300 hover:scale-105"
-                />
-                <h3 className="text-xl font-semibold mt-4 mb-2">{project.title}</h3>
-                <p className="text-gray-400 mb-4">{project.desc}</p>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-400 hover:underline"
-                >
-                  Lihat Proyek →
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
+       {/* Projects */}
+<div id="projects" className="mt-20 text-center p-6 max-w-7xl mx-auto">
+  <h2 className="text-3xl sm:text-4xl font-bold mb-8 tracking-tight text-gray-100">Projects</h2>
+  <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4">
+    {[
+      { title: 'GameStore App', desc: 'Aplikasi web jual-beli game berbasis Laravel.', link: 'https://github.com/FAJRI2378/gamestore', image: '/gamestore.png' },
+      { title: 'Rasania (Mobile)', desc: 'Aplikasi resep makanan dengan React Native.', link: 'https://github.com/FAJRI2378/Resepku', image: '/rasaniaa.png' },
+      { title: 'Game Pairs', desc: 'Game sederhana dengan GDevelop.', link: 'https://fajri2378.itch.io/pairs', image: '/pairs.png' },
+      { title: 'Sokoban', desc: 'Game Sokoban klasik dengan GDevelop.', link: 'https://fajri2378.itch.io/sokoban', image: '/sokoban.png' },
+      { title: 'Platformer', desc: 'Game Platformer dengan GDevelop.', link: 'https://fajri2378.itch.io/game-platform', image: '/platform.png' },
+    ].map((project, index) => (
+      <div
+        key={index}
+        className="bg-slate-800/70 border border-white/10 text-gray-200 rounded-2xl p-6 text-left transition-transform duration-300 hover:scale-[1.03] shadow-lg"
+      >
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-auto max-h-[300px] object-contain rounded-xl mb-4 transition-transform duration-300 hover:scale-105"
+        />
+        <h3 className="text-xl font-semibold mt-4 mb-2">{project.title}</h3>
+        <p className="text-gray-400 mb-4">{project.desc}</p>
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-400 hover:underline"
+        >
+          Lihat Proyek →
+        </a>
+      </div>
+    ))}
+  </div>
+</div>
+
 
         {/* Certificates */}
 <div id="certificates" className="mt-20 text-center p-6 max-w-6xl mx-auto">
-  <h2 className="text-3xl sm:text-4xl font-bold mb-6 tracking-tight text-gray-100">Certificates</h2>
+  <h2 className="text-3xl sm:text-4xl font-bold mb-6 tracking-tight text-gray-100">
+    Certificates
+  </h2>
   <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto mb-8 px-4">
     Beberapa sertifikat yang saya dapatkan selama sekolah:
   </p>
+
   <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4">
     {[
       { title: 'Paskibra', image: '/sertifikat1.png' },
@@ -138,7 +142,7 @@ export default function Home() {
         <img
           src={cert.image}
           alt={cert.title}
-          className="w-full h-56 object-cover rounded-lg mb-4"
+          className="w-full h-auto max-h-[400px] object-contain rounded-lg mb-4"
         />
         <h3 className="text-lg font-semibold text-gray-100">{cert.title}</h3>
 
@@ -159,27 +163,29 @@ export default function Home() {
 </div>
 
 
-        {/* Photography */}
-        <div id="photography" className="mt-20 text-center p-6 rounded-xl max-w-6xl mx-auto bg-slate-800/60 shadow-lg backdrop-blur-md">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6 tracking-tight text-gray-100">Photography</h2>
-          <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto mb-8 px-4">
-            Selain ngoding, saya juga punya hobi fotografi. Berikut hasil jepretan saya:
-          </p>
-          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4">
-            {['/p1.jpg', '/p2.jpg', '/p3.jpg'].map((src, idx) => (
-              <div
-                key={idx}
-                className="rounded-2xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform duration-300"
-              >
-                <img
-                  src={src}
-                  alt={`Foto karya ${idx + 1}`}
-                  className="w-full h-64 object-cover"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+
+       {/* Photography */}
+<div id="photography" className="mt-20 text-center p-6 rounded-xl max-w-6xl mx-auto bg-slate-800/60 shadow-lg backdrop-blur-md">
+  <h2 className="text-3xl sm:text-4xl font-bold mb-6 tracking-tight text-gray-100">Photography</h2>
+  <p className="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto mb-8 px-4">
+    Selain ngoding, saya juga punya hobi fotografi. Berikut hasil jepretan saya:
+  </p>
+  <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4">
+    {['/p1.jpg', '/p2.jpg', '/p3.jpg'].map((src, idx) => (
+      <div
+        key={idx}
+        className="rounded-2xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform duration-300"
+      >
+        <img
+          src={src}
+          alt={`Foto karya ${idx + 1}`}
+          className="w-full h-auto max-h-[400px] object-contain rounded-lg"
+        />
+      </div>
+    ))}
+  </div>
+</div>
+
 
         {/* Social Media */}
         <div id="social-media" className="mt-20 text-center p-6 rounded-xl max-w-4xl mx-auto bg-slate-800/60 shadow-lg">
