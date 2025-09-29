@@ -83,11 +83,13 @@ export default function Home() {
   <h2 className="text-3xl sm:text-4xl font-bold mb-8 tracking-tight text-gray-100">Projects</h2>
   <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4">
     {[
-      { title: 'GameStore App', desc: 'Aplikasi web jual-beli game berbasis Laravel.', link: 'https://github.com/FAJRI2378/gamestore', image: '/gamestore.png' },
+      { title: 'GameStore App', desc: 'web jual-beli game berbasis Laravel.', link: 'https://github.com/FAJRI2378/gamestore', image: '/gamestore.png' },
       { title: 'Rasania (Mobile)', desc: 'Aplikasi resep makanan dengan React Native.', link: 'https://github.com/FAJRI2378/Resepku', image: '/rasaniaa.png' },
-      { title: 'Game Pairs', desc: 'Game sederhana dengan GDevelop.', link: 'https://fajri2378.itch.io/pairs', image: '/pairs.png' },
-      { title: 'Sokoban', desc: 'Game Sokoban klasik dengan GDevelop.', link: 'https://fajri2378.itch.io/sokoban', image: '/sokoban.png' },
-      { title: 'Platformer', desc: 'Game Platformer dengan GDevelop.', link: 'https://fajri2378.itch.io/game-platform', image: '/platform.png' },
+      { title: 'Game Pairs', desc: 'Kamu bisa mencoba game ini dengan klik Button Di bawah ini.', link: 'https://fajri2378.itch.io/pairs', image: '/pairs.png' },
+      { title: 'Sokoban', desc: 'Kamu bisa mencoba game ini dengan klik Button Di bawah ini.', link: 'https://fajri2378.itch.io/sokoban', image: '/sokoban.png' },
+      { title: 'Platformer', desc: 'Kamu bisa mencoba game ini dengan klik Button Di bawah ini.', link: 'https://fajri2378.itch.io/game-platform', image: '/platform.png' },
+      { title: 'Bookstore', desc: 'Web Bookstore dengan berbasis php native.', link: 'https://github.com/FAJRI2378/book2', image: '/bookstore.png' },
+      { title: 'Project Dicoding', desc: 'Web untuk misi terakhir dicoding agar mendapatkan sertifikat. ', link: 'https://github.com/FAJRI2378/book2', image: '/Dicoding.png' },
     ].map((project, index) => (
       <div
         key={index}
