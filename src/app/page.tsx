@@ -64,16 +64,16 @@ export default function Home() {
           <h2 className="text-3xl sm:text-4xl font-bold mb-6 tracking-tight text-gray-100">Education</h2>
           <ul className="space-y-4 text-left text-gray-300">
             <li>
-              <b>2022 – Sekarang</b> <br />
+              <b>2023 – 2026</b> <br />
               SMK Negeri 21 Jakarta — RPL (Rekayasa Perangkat Lunak)
             </li>
             <li>
-              <b>2019 – 2022</b> <br />
-              SMP Negeri XX Jakarta
+              <b>2020 – 2023</b> <br />
+              SMP Negeri 221 Jakarta
             </li>
             <li>
-              <b>2013 – 2019</b> <br />
-              SD Negeri XX Jakarta
+              <b>2014 – 2020</b> <br />
+              SDN Sunter Agung 03 Pagi
             </li>
           </ul>
         </div>

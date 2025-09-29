@@ -26,7 +26,7 @@ export default function SkillsMarquee() {
     },
     {
       name: "Laravel",
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg",
+      src: "laravel.png",
       whiteBg: true, // 🔥 ditambahkan biar lebih jelas
     },
     {
@@ -43,7 +43,7 @@ export default function SkillsMarquee() {
     },
     {
       name: "GDevelop",
-      src: "https://upload.wikimedia.org/wikipedia/commons/0/0a/GDevelop_Logo.png",
+      src: "gdevelop.png",
       whiteBg: true,
     },
   ]
