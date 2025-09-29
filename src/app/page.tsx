@@ -127,7 +127,7 @@ export default function Home() {
 
   <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4">
     {[
-      { title: 'Paskibra', image: '/sertifikat1.png' },
+      { title: 'Paskibra', image: '/Sertifikat1.png' },
       { title: 'Paskibra', image: '/sertifikat2.png' },
       { title: 'Paskibra', image: '/sertifikat3.png' },
       { title: 'Paskibra', image: '/sertifikat4.png' },
