@@ -106,9 +106,9 @@ const EDUCATION = [
 
 const CERTIFICATES = [
   { title: "Juara Purwa 3", issuer: "Paskibra", image: "/Sertifikat1.png" },
-  { title: "Juara Madya 3", issuer: "Paskibra", image: "/Sertifikat2.png" },
-  { title: "Juara Purwa 1", issuer: "Paskibra", image: "/Sertifikat3.png" },
-  { title: "Juara Mula 3", issuer: "Paskibra", image: "/Sertifikat4.png" },
+  { title: "Juara Madya 3", issuer: "Paskibra", image: "/sertifikat2.png" },
+  { title: "Juara Purwa 1", issuer: "Paskibra", image: "/sertifikat3.png" },
+  { title: "Juara Mula 3", issuer: "Paskibra", image: "/sertifikat4.png" },
   {
     title: "Sertifikat Kelulusan: Dasar Pemrograman Web",
     issuer: "Dicoding",
