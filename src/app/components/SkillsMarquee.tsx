@@ -1,5 +1,7 @@
-"use client"
-import Marquee from "react-fast-marquee"
+"use client";
+
+import Image from "next/image";
+import Marquee from "react-fast-marquee";
 
 export default function SkillsMarquee() {
   const skills = [
@@ -26,8 +28,8 @@ export default function SkillsMarquee() {
     },
     {
       name: "Laravel",
-      src: "laravel.png",
-      whiteBg: true, // 🔥 ditambahkan biar lebih jelas
+      src: "/laravel.png",
+      whiteBg: true,
     },
     {
       name: "MySQL",
@@ -43,16 +45,17 @@ export default function SkillsMarquee() {
     },
     {
       name: "GDevelop",
-      src: "gdevelop.png",
+      src: "/gdevelop.png",
       whiteBg: true,
     },
-  ]
+  ];
 
   return (
     <div className="mt-20 text-center max-w-6xl mx-auto">
       <h2 className="text-3xl sm:text-4xl font-bold mb-6 tracking-tight text-gray-100">
         Skills
       </h2>
+
       <Marquee gradient={false} speed={50}>
         {skills.map((skill, idx) => (
           <div
@@ -64,16 +67,21 @@ export default function SkillsMarquee() {
                 skill.whiteBg ? "bg-white rounded-lg p-1" : ""
               }`}
             >
-              <img
+              <Image
                 src={skill.src}
                 alt={skill.name}
+                width={48}
+                height={48}
                 className="max-w-full max-h-full"
               />
             </div>
-            <span className="text-gray-200 text-sm">{skill.name}</span>
+
+            <span className="text-gray-200 text-sm">
+              {skill.name}
+            </span>
           </div>
         ))}
       </Marquee>
     </div>
-  )
+  );
 }
