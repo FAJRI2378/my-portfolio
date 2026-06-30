@@ -52,7 +52,7 @@ export default function SkillsMarquee() {
 
   return (
     <div className="mt-20 text-center max-w-6xl mx-auto">
-      <h2 className="text-3xl sm:text-4xl font-bold mb-6 tracking-tight text-gray-100">
+      <h2 className="text-3xl sm:text-4xl font-bold mb-6 tracking-tight text-black">
         Skills
       </h2>
 
