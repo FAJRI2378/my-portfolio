@@ -9,10 +9,10 @@ import {
   FaGithub,
   FaWhatsapp,
   FaChevronRight,
-  FaCamera,
   FaClock,
   FaGraduationCap,
   FaAward,
+  FaCamera,
   FaSpotify,
   FaComments,
 } from "react-icons/fa";
@@ -24,7 +24,38 @@ import Footer from "./components/Footer";
 import ParticlesBackground from "./components/ParticlesBackground";
 import SkillsMarquee from "./components/SkillsMarquee";
 
-const PROJECTS = [
+interface Project {
+  title: string;
+  type: string;
+  desc: string;
+  link: string;
+  image: string;
+  tags: string[];
+  isHighlight?: boolean;
+  isDevelopment?: boolean;
+}
+
+interface Education {
+  year: string;
+  school: string;
+  major: string;
+}
+
+interface Certificate {
+  title: string;
+  issuer: string;
+  image: string;
+  link?: string;
+}
+
+interface Social {
+  name: string;
+  icon: React.ReactNode;
+  href: string;
+  color: string;
+}
+
+const PROJECTS: Project[] = [
   {
     title: "Kamandanu Jaya Logistik",
     type: "Ongoing Project",
@@ -94,7 +125,7 @@ const PROJECTS = [
   },
 ];
 
-const EDUCATION = [
+const EDUCATION: Education[] = [
   {
     year: "2023 - 2026",
     school: "SMK Negeri 21 Jakarta",
@@ -104,7 +135,7 @@ const EDUCATION = [
   { year: "2014 - 2020", school: "SDN Sunter Agung 03 Pagi", major: "" },
 ];
 
-const CERTIFICATES = [
+const CERTIFICATES: Certificate[] = [
   { title: "3rd Place Purwa", issuer: "Paskibra", image: "/Sertifikat1.png" },
   { title: "3rd Place Madya", issuer: "Paskibra", image: "/sertifikat2.png" },
   { title: "1st Place Purwa", issuer: "Paskibra", image: "/sertifikat3.png" },
@@ -119,23 +150,30 @@ const CERTIFICATES = [
     title: "Certificate of Completion: Basic Web Programming",
     issuer: "USK",
     image: "/usk-preview.png",
+    link : "/usk.pdf"
+  },
+  {
+   title: "Volleyball Championship Certificate",
+   issuer: "SMK Negeri 21 Volleyball Tournament",
+    image: "/smk21.png",
+    link : "/smk21.pdf"
   },
 ];
 
-const PHOTOS = ["/p1.jpg", "/p2.jpg", "/p3.jpg"];
+const PHOTOS: string[] = ["/p1.jpg", "/p2.jpg", "/p3.jpg"];
 
-const SOCIALS = [
+const SOCIALS: Social[] = [
   {
     name: "Instagram",
     icon: <FaInstagram />,
     href: "https://www.instagram.com/armntrifjri",
-    color: "bg-pink-400",
+    color: "bg-[#F472B6]",
   },
   {
     name: "LinkedIn",
     icon: <FaLinkedin />,
     href: "https://www.linkedin.com/in/arman-tri-fajri-2846a7334",
-    color: "bg-blue-400",
+    color: "bg-[#60A5FA]",
   },
   {
     name: "GitHub",
@@ -147,7 +185,7 @@ const SOCIALS = [
     name: "WhatsApp",
     icon: <FaWhatsapp />,
     href: "https://wa.me/6287872594546",
-    color: "bg-green-400",
+    color: "bg-[#4ADE80]",
   },
   {
     name: "Vercel",
@@ -159,20 +197,27 @@ const SOCIALS = [
     name: "Spotify",
     icon: <FaSpotify />,
     href: "https://open.spotify.com/playlist/6JLfBvd6G8GVJw1LYENT8R",
-    color: "bg-green-500",
+    color: "bg-[#22C55E]",
   },
   {
     name: "Ngl",
     icon: <FaComments />,
     href: "https://ngl.link/armntrifjrii",
-    color: "bg-yellow-400",
+    color: "bg-[#FACC15]",
   },
 ];
 
 export default function Home() {
+  const handleImageError = (
+    e: React.SyntheticEvent<HTMLImageElement, Event>,
+    fallbackUrl: string
+  ) => {
+    e.currentTarget.src = fallbackUrl;
+  };
+
   return (
     <div className="bg-[#f0f0f0] min-h-screen text-black font-sans selection:bg-black selection:text-white relative overflow-hidden">
-      {/* Keeping the particles wrapper to blend with neubrutalism */}
+      {/* Background Layer */}
       <div className="fixed inset-0 z-0 opacity-40 pointer-events-none mix-blend-difference">
         <ParticlesBackground />
       </div>
@@ -216,7 +261,6 @@ export default function Home() {
           className="grid md:grid-cols-2 gap-8 md:gap-12 items-center py-6 sm:py-10"
         >
           <div className="relative flex justify-center md:justify-end md:pr-10">
-            {/* Brutalist style photo */}
             <div className="relative w-56 h-56 sm:w-72 sm:h-72 border-4 border-black shadow-[8px_8px_0px_rgba(0,0,0,1)] sm:shadow-[12px_12px_0px_rgba(0,0,0,1)] bg-white overflow-hidden transform hover:-rotate-3 transition-transform duration-300">
               <Image
                 src="/fajri.jpg"
@@ -225,10 +269,9 @@ export default function Home() {
                 sizes="(max-width: 768px) 100vw, 300px"
                 className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
                 priority
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).src =
-                    "https://placehold.co/400x400/000000/FFF?text=Arman";
-                }}
+                onError={(e) =>
+                  handleImageError(e, "https://placehold.co/400x400/000000/FFF?text=Arman")
+                }
               />
             </div>
           </div>
@@ -262,7 +305,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* --- SKILLS --- */}
+        {/* --- SKILLS SECTION --- */}
         <section
           id="skills"
           className="space-y-6 sm:space-y-8 py-8 sm:py-10 bg-[#FF90E8] border-y-4 border-black -mx-4 sm:-mx-8 px-4 sm:px-8 shadow-[0_6px_0px_rgba(0,0,0,1)] sm:shadow-[0_8px_0px_rgba(0,0,0,1)]"
@@ -350,10 +393,14 @@ export default function Home() {
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src =
-                        `https://placehold.co/600x400/000/FFF?text=${project.isDevelopment ? "Developing..." : "Preview"}`;
-                    }}
+                    onError={(e) =>
+                      handleImageError(
+                        e,
+                        `https://placehold.co/600x400/000/FFF?text=${
+                          project.isDevelopment ? "Developing..." : "Preview"
+                        }`
+                      )
+                    }
                   />
                 </div>
 
@@ -386,7 +433,7 @@ export default function Home() {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block w-full text-center py-2 sm:py-3 bg-[#FF90E8] border-4 border-black text-black text-sm sm:text-base font-black uppercase shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] transition-all flex justify-center items-center gap-2"
+                        className="w-full text-center py-2 sm:py-3 bg-[#FF90E8] border-4 border-black text-black text-sm sm:text-base font-black uppercase shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] transition-all flex justify-center items-center gap-2"
                       >
                         VIEW PROJECT <FaChevronRight size={12} className="sm:text-sm" />
                       </a>
@@ -419,10 +466,12 @@ export default function Home() {
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src =
-                        "https://placehold.co/600x450/000/FFF?text=Certificate";
-                    }}
+                    onError={(e) =>
+                      handleImageError(
+                        e,
+                        "https://placehold.co/600x450/000/FFF?text=Certificate"
+                      )
+                    }
                   />
                   <a
                     href={cert.link || cert.image}
@@ -475,10 +524,12 @@ export default function Home() {
                     width={800}
                     height={1000}
                     className="w-full h-auto max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).src =
-                        "https://placehold.co/800x1000/000/FFF?text=Photo";
-                    }}
+                    onError={(e) =>
+                      handleImageError(
+                        e,
+                        "https://placehold.co/800x1000/000/FFF?text=Photo"
+                      )
+                    }
                   />
                   <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 bg-white border-4 border-black px-3 py-1 sm:px-4 sm:py-2 font-black uppercase text-[10px] sm:text-sm shadow-[4px_4px_0px_rgba(0,0,0,1)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     Captured by Arman
@@ -521,29 +572,6 @@ export default function Home() {
       </main>
 
       <Footer />
-
-      <style jsx global>{`
-        @keyframes spin-slow {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-        .animate-spin-slow {
-          animation: spin-slow 3s linear infinite;
-        }
-        
-        /* Utility class untuk menyembunyikan scrollbar di Navbar Mobile */
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
     </div>
   );
 }
